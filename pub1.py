@@ -1,8 +1,8 @@
 import paho.mqtt.client as mqtt
 import time
 
-topic = "junrey/pn/c1/comlab/temperature"
-payload = "20 Celcius"
+topic =input("Enter the topic: ")
+payload =input("Enter the payload: ")
 
 def on_connect(client, userdata, flags, rc):
     print("Connected with result code "+str(rc))
@@ -15,7 +15,7 @@ def on_connect(client, userdata, flags, rc):
 client = mqtt.Client()
 client.on_connect = on_connect
 
-client.connect("mqtt.eclipse.org", 1883, 60)
+client.connect("test.mosquitto.org", 1883, 60)
 
 time.sleep(1)
 while True:

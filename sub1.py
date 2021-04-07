@@ -1,17 +1,14 @@
 import paho.mqtt.client as mqtt
 
 # topic = "junrey/pn/c1/comlab/temperature"
-topic = "junrey/pn/c1/comlab/#"
+topic = input("Enter topic to subscribe: ")
 
 def on_connect(client, userdata, flags, rc):
-    print("Connected with result code "+str(rc))
-    print(" ")
+    print("Connected with result code "+str(rc)+"\n")
     print("This is a subscriber client")
-    print("Subscribed topic: " + topic)
-    print(" ")
+    print("Subscribed topic: " + topic+"\n")
 
     client.subscribe(topic)
-
 def on_message(client, userdata, msg):
     print(msg.topic + ": " + str(msg.payload.decode()))
 
