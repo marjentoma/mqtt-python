@@ -23,3 +23,10 @@ client.connect("test.mosquitto.org", 1883, 60)
 # Other loop*() functions are available that give a threaded interface and a
 # manual interface.
 client.loop_forever()
+# Giusab ra naku ni for GITHUB FORk
+while True:
+    client.loop()
+    client.publish("junrey/sample", count)
+    print(count)
+    time.sleep(1)
+    count += 1
